@@ -1,17 +1,16 @@
 
-//menu,table-creator directly (js) and dragging-dropping
+ 
 
 const createTableElements =  () => {
-    // removeAllChildNodes(table_page);
+    
     let count =1;
     for(let i of table_array){
 
-        // console.log(i,menu[i])
         let div = document.createElement("div");
         let p = document.createElement("p");
         let span = document.createElement("span");
         let h1 = document.createElement("h1");
-        h1.innerText = "Table " + count;//Table-1,2,3
+        h1.innerText = "Table " + count;
         p.innerText = i["total"];
         span.innerText = "| Total items : " + Object.keys(i["items"]).length;
 
@@ -44,7 +43,7 @@ const createTableElements =  () => {
                         table_array[id-1]["items"][data]  += 1;
                     }
                     for(let j in table_array[id-1]["items"]){
-                        //console.log(j,table_array[id-1]["items"][j])
+            
                         total_amount += menu[j]*table_array[id-1]["items"][j]
                     }
                     console.log("tpata;",total_amount);

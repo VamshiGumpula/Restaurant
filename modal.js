@@ -1,5 +1,4 @@
-
-//model creation
+ 
 const create_table_row = (e) => {
     table_detail.style.display = "flex";
 
@@ -54,7 +53,7 @@ const create_table_row = (e) => {
                 let del = document.createElement("span");
 
                 
-                // del.setAttribute("class","icofont-trash");
+                 
                 span.setAttribute("class","buttonss");  
                 span1.setAttribute("class","buttonss");
                 
@@ -67,7 +66,7 @@ const create_table_row = (e) => {
                 count_inp.setAttribute("step","1");
 
                 
-                /*dell symbol*/
+                 
                 del.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
               </svg>`; 
@@ -80,13 +79,12 @@ const create_table_row = (e) => {
                 
                 td1.innerHTML = count;
                 td2.innerHTML = name;
-                // td3.innerHTML = amount;
+                
                 count_inp.value = quantity;
                 
                 td3.appendChild(number);
                 td4.appendChild(count_inp);
-                // td4.appendChild(span);
-                // td4.appendChild(span1);
+               
                 td5.appendChild(del);
 
                 row.appendChild(td1);
@@ -107,11 +105,10 @@ const create_table_row = (e) => {
 
             let total_amount = 0;
             for(let j in table_array[id-1]["items"]){
-                //console.log(j,table_array[id-1]["items"][j])
+                
                 total_amount += menu[j]*table_array[id-1]["items"][j]
             }
-            // console.log("tpata;",total_amount);
-            // table_array[id-1]["total"] = total_amount;
+          
             amount_col.innerHTML = "Total";
             amount_col2.innerHTML = total_amount;
             amount_row.appendChild(amount_col);
@@ -136,27 +133,24 @@ modal_close.onclick = function(event){
     
 }
 
-
-//Generate bill
+ 
 let genbill=document.getElementById('generatebill');
 genbill.addEventListener('click',GenerateBill)
 
 function GenerateBill(){
-  // alert("hi")
+  
   
 let modal=document.getElementById('generatebill');
 let table_name= modal.parentNode.childNodes[1].innerText.split("|")[0]
-// console.log(modal.parentNode.children[1])
-// console.log(modal.parentNode.innerHTML)
-//  modal.parentNode.removeChild(children[2]);
+ 
  if(modal.parentNode.children[1].innerHTML!=""){ 
-  // console.log("finding id "+modal.parentNode.children[1].children[0].parentElement.id)
+   
   let toatl_price=modal.parentNode.children[1].lastElementChild.lastElementChild.innerHTML;
-  // console.log(modal.parentNode.children[1].lastElementChild.lastElementChild.innerHTML)
+   
   let id=modal.parentNode.children[1].children[0].parentElement.id
   console.log(modal.parentNode.children[1].children[0].parentElement)
 
-  removeAllChildNodes(modal.parentNode.children[1].children[0].parentElement)//removing all child nodes
+  removeAllChildNodes(modal.parentNode.children[1].children[0].parentElement) 
 
   modal.parentNode.children[1].innerHTML="";
   alert(`Paying Bill... For ${table_name} the bill is Rs.${toatl_price}`)

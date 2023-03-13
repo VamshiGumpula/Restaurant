@@ -1,5 +1,5 @@
+ 
 
-// console.log("hello");
 let menu_page = document.getElementById("menu");
 let table_page = document.getElementById("tables");
 let table_detail = document.getElementById("table_detail");
@@ -24,8 +24,7 @@ let table3 = {items:{},total:0};
 let table_array = [table1,table2,table3];
 
 
-
-// searching by key 
+  
 menu = {
         "Crusty Garlic Focaccia with Melted Cheese": 105.00,
         "French Fries":105.00,
@@ -52,8 +51,6 @@ const updateElements = (id,count,total) =>{
     p.innerHTML = count;
     span.innerHTML = `| Total price : ${total}`;
     p.appendChild(span);
-
-    // console.log(ele,count,total);
 
 }
 
